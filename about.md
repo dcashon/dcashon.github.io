@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Hello!
+Hello! I am Daniel.
