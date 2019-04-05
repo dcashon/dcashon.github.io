@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Hello! I am Daniel.
+![site_pic] (dcashon.github.io/assets/images/site_pic.jpg)
