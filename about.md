@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-![site_pic] (dcashon.github.io/assets/images/site_pic.jpg)
+![site_pic] (https://dcashon.github.io/assets/images/site_pic.jpg)
