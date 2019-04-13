@@ -18,3 +18,5 @@ Gow - UNIX apps on Windows. Makes command prompt actually useful, enabling usage
 Get here:
   https://github.com/bmatzelle/gow/wiki
 
+Excellent Summary of best practices for C++ operator overloading:
+https://stackoverflow.com/questions/4421706/what-are-the-basic-rules-and-idioms-for-operator-overloading
