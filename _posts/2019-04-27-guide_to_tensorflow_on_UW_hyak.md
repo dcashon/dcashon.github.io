@@ -47,6 +47,11 @@ srun -p stf-int-gpu -A stf --nodes=1 --mem=120G  --time=1:00:00 --gres=gpu:P100:
 
 You can modify the time and other parameters as needed.
 
+Hop into your conda env:
+~~~~
+module load anaconda3_5.3
+source activate neural_nets
+~~~~
 
 
 
