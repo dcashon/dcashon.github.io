@@ -6,7 +6,7 @@ description: "Jupyter Notebook Tunneling On UW Hyak For Tensorflow"
 keywords: "dummy content"
 ---
 
-Via STF, UW students get free access to GPU resources on Hyak. This is a great alternative to using other cloud services. 
+Via STF, UW students get free access to GPU resources ( on Hyak. This is a great alternative to using other cloud services. 
 
 ## Setting up your Python environment
 
@@ -28,11 +28,7 @@ module load anaconda3_5.3
 
 ~~~~
 conda create -n neural_nets python=3.6
-~~~~
-~~~~
 source activate neural_nets
-~~~~
-~~~~
 conda install tensorflow-gpu scikit-learn jupyter
 ~~~~
 
@@ -47,12 +43,11 @@ srun -p stf-int-gpu -A stf --nodes=1 --mem=120G  --time=1:00:00 --gres=gpu:P100:
 
 You can modify the time and other parameters as needed.
 
-Hop into your conda env:
+Hop into your conda env and get CUDA:
 ~~~~
 module load anaconda3_5.3
 source activate neural_nets
 ~~~~
-
 
 
 ## Setting up port forwarding for Jupyter notebook
