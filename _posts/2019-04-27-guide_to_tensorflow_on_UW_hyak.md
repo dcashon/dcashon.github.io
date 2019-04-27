@@ -6,7 +6,9 @@ description: "Jupyter Notebook Tunneling On UW Hyak For Tensorflow"
 keywords: "dummy content"
 ---
 
-Via STF, UW students get free access to GPU resources ( on Hyak. This is a great alternative to using other cloud services. 
+Via STF, UW students get free access to GPU resources (NVIDIA Tesla P100s) on Hyak. This is a great alternative to using other cloud services. If you are a UW student and haven't used Hyak before, you can obtain an account at the following:
+
+<http://students.washington.edu/hpcc/>
 
 ## Setting up your Python environment
 
