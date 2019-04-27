@@ -12,9 +12,8 @@ Via STF, UW students get free access to GPU resources on Hyak. This is a great a
 
 Request an interactive GPU node with the following:
 
-'''
-srun -p stf-int-gpu -A stf --nodes=1 --mem=120G  --time=1:00:00 --gres=gpu:P100:1 --pty /bin/bash
-'''
+
+'srun -p stf-int-gpu -A stf --nodes=1 --mem=120G  --time=1:00:00 --gres=gpu:P100:1 --pty /bin/bash'
 
 You can modify the time and other parameters as needed.
 
