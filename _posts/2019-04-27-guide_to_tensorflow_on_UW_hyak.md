@@ -56,3 +56,10 @@ You can modify the time and other parameters as needed.
 
 
 
+
+### References
+Helpful guide to Anaconda GPU stuff
+https://docs.anaconda.com/anaconda/user-guide/tasks/gpu-packages/https://docs.anaconda.com/anaconda/user-guide/tasks/gpu-packages/
+
+
+
