@@ -32,10 +32,24 @@ source activate neural_nets
 conda install tensorflow-gpu scikit-learn jupyter
 ~~~~
 
+4. Once your environment is ready to go, exit the compute node and return to the login node.
+
+~~~~
+exit
+~~~~
+
+5. At this point, you should see @mox1 or @mox2 after your login name in terminal. Start screen to multiplex:
+
+~~~~
+screen
+~~~~
+
+Create another window with Ctrl-A c, then switch back to your main window with Crtl-A Crtl-A. In that window execute what follows.
+
 
 ## Getting a GPU Compute Node
 
-Request an interactive GPU node with the following:
+Request an interactive GPU node:
 
 ~~~~
 srun -p stf-int-gpu -A stf --nodes=1 --mem=120G  --time=1:00:00 --gres=gpu:P100:1 --pty /bin/bash
@@ -45,14 +59,33 @@ You can modify the time and other parameters as needed.
 
 Hop into your conda env and get CUDA:
 ~~~~
-module load anaconda3_5.3
+module load anaconda3_5.3 cuda/10.1.105_418.39
 source activate neural_nets
 ~~~~
 
-
 ## Setting up port forwarding for Jupyter notebook
+At this step, you should have 2 terminals open, one in the entry node @mox1 or @mox2 and another in your allocating GPU compute node, denoted by nXXXX. 
 
+1. Start a jupyter notebook server in your compute node:
 
+~~~~
+jupyter notebook --no-browser --port=8888
+~~~~
+
+2. Switch back to your entry node (Ctrl-A Ctrl-A) then port forward (you have to enter the specific node that Hyak allocates to you, nXXXX):
+
+~~~~
+ssh localhost:8888:localhost:8888 nXXXX
+~~~~
+
+3. You should now be able to access the notebook via your local browser by navigating to localhost:8888. Copy and paste the login token and you are good to go. Check that tensorflow recognizes your GPU by executing the following in a Jupyter cell:
+
+~~~~
+import tensorflow as tf
+tf.test.is_gpu_available()
+~~~~
+
+If returns true, you are ready to rumble.
 
 
 
