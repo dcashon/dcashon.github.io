@@ -12,6 +12,12 @@ Via STF, UW students get free access to GPU resources (NVIDIA Tesla P100s) on Hy
 
 ## Setting up your Python environment
 
+On initial connection, forward the usual Jupyter Notebook local port to the login node - connect to Hyak using:
+
+~~~~
+ssh -L localhost:8888:localhost:8888 $USERNAME@mox.hyak.uw.edu
+~~~~
+
 Go ahead and set up your environment on a normal interactive node. It seems the GPU nodes have issues with internet connection.
 
 1. Get an interactive node:
@@ -59,7 +65,7 @@ srun -p stf-int-gpu -A stf --nodes=1 --mem=120G  --time=1:00:00 --gres=gpu:P100:
 
 You can modify the time and other parameters as needed.
 
-Hop into your conda env and get CUDA:
+Load in Anaconda and CUDA, then hop into your conda env from earlier:
 ~~~~
 module load anaconda3_5.3 cuda/10.1.105_418.39
 source activate neural_nets
@@ -68,16 +74,16 @@ source activate neural_nets
 ## Setting up port forwarding for Jupyter notebook
 At this step, you should have 2 terminals open, one in the entry node @mox1 or @mox2 and another in your allocating GPU compute node, denoted by nXXXX. 
 
-1. Start a jupyter notebook server in your compute node:
+1. Start a jupyter notebook server in your GPU node:
 
 ~~~~
 jupyter notebook --no-browser --port=8888
 ~~~~
 
-2. Switch back to your entry node (Ctrl-A Ctrl-A) then port forward (you have to enter the specific node that Hyak allocates to you, nXXXX):
+2. Switch back to the login node (Ctrl-A Ctrl-A) then port forward (you have to enter the specific node that Hyak allocates to you, nXXXX):
 
 ~~~~
-ssh localhost:8888:localhost:8888 nXXXX
+ssh -L localhost:8888:localhost:8888 nXXXX
 ~~~~
 
 3. You should now be able to access the notebook via your local browser by navigating to localhost:8888. Copy and paste the login token and you are good to go. Check that tensorflow recognizes your GPU by executing the following in a Jupyter cell:
@@ -87,14 +93,28 @@ import tensorflow as tf
 tf.test.is_gpu_available()
 ~~~~
 
-If returns true, you are ready to rumble.
+If returns true, you are ready to rumble. If you can't access the notebook via your local browser, ensure that you port forwarded to the login node upon initial connection to Hyak, and also that you port forwarded to the GPU node.
+
+## Practicalities
+When you create environments in conda, they seem to be placed in your home directory. On Hyak this has a 10GB quota - creating an environment with Tensorflow, jupyter, and scikit-learn already reaches a decent size due to all the dependencies. If you get File I/O errors you may be over your home directory quota - check using:
+
+~~~~
+mmlsquota --block-size G gscratch:home 
+~~~~
 
 
 
 
 ### References
 Helpful guide to Anaconda GPU stuff
-https://docs.anaconda.com/anaconda/user-guide/tasks/gpu-packages/https://docs.anaconda.com/anaconda/user-guide/tasks/gpu-packages/
+
+<https://docs.anaconda.com/anaconda/user-guide/tasks/gpu-packages/https://docs.anaconda.com/anaconda/user-guide/tasks/gpu-packages/>
+
+Hyak Wiki:
+
+<https://wiki.cac.washington.edu/display/hyakusers/WIKI+for+Hyak+users>
+
+
 
 
 
