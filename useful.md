@@ -18,8 +18,7 @@ Backpropagation:
 
 
 ### Other Cool Stuff
-Gow - UNIX apps on Windows. Makes command prompt actually useful, enabling usage of ssh, scp, and a bunch more.
-Get here:
+Gow - UNIX apps on Windows:
 
 <https://github.com/bmatzelle/gow/wiki>
 
