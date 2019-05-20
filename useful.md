@@ -26,3 +26,8 @@ Get here:
 Excellent Summary of best practices for C++ operator overloading:
 
 <https://stackoverflow.com/questions/4421706/what-are-the-basic-rules-and-idioms-for-operator-overloading>
+
+
+Ignore formatting, write code:
+
+https://github.com/python/black
