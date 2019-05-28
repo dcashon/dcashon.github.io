@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HPC Basics Part 1: Vital Commands, Editors, and Data Transfer Basics"
+title: "HPC Basics Part 1: Vital Commands, Editors, and Data Transfer"
 comments: true
 description: "HPC Basics Part 1"
 keywords: "dummy content"
