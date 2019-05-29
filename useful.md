@@ -29,4 +29,8 @@ Excellent Summary of best practices for C++ operator overloading:
 
 Ignore formatting, write code:
 
-https://github.com/python/black
+<https://github.com/python/black>
+
+Best vim colorscheme:
+
+<https://github.com/jnurmine/Zenburn>
