@@ -16,4 +16,6 @@ Google Cloud Platform, and Microsoft Azure. In addition, many academic departmen
 
 ## Vital Commands
 
+TODO
+
 
